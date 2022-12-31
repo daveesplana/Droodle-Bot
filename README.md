@@ -10,4 +10,4 @@ The bot is only meant for our private server, and the majority of the codes can 
 Required packages can be installed through https://pypi.org
 
 # License
-This Project is Licensed under MIT License
+This Project is Licensed under MIT License - see the LICENSE.md file for details
