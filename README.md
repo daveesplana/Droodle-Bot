@@ -1,5 +1,7 @@
 # Droodle Discord Bot
-The bot is only meant for our private server, and the majority of the codes can be accessible and modified.
+The bot is only meant for our private server.
+
+You are free to make use of my codes.
 
 # Requirements
 - Python 3.8 or Higher
