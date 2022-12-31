@@ -1,6 +1,10 @@
 # Droodle Discord Bot
-Droodle is a Python Coded Discord bot.
+The bot is only meant for our private server, and the majority of the codes can be accessible and modified.
 
-The bot is only meant for our private server, and the majority of the sources aren't accessible.
+# Requirements
+- Python 3.8 or Higher
+- discord.py 2.1.0
+- googletrans 3.0.0
 
-The Discord bot is still a work-in-progress. 
+# License
+This Project is Licensed under MIT License
