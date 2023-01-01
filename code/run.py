@@ -2,7 +2,7 @@ import discord
 
 @bot.event
 async def on_ready():
-    print(f'Logging in as {bot.id}')
+    print(f'Logging in as {bot.id}.')
     print('Online!')
     
 @slash.slash(
