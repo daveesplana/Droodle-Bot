@@ -35,7 +35,7 @@ async def whoami(ctx):
     color=0x83e50b)
     await ctx.send(embed=embed)
 
-@slash.slash(name="translate", description="Translate a thing")
+@slash.slash(name="translate", description="Translates a message")
 async def translate(ctx, lang, *, thing):
     translator = Translator()
     translation = translator.translate(thing, dest=lang)
