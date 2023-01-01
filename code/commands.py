@@ -7,7 +7,6 @@ from discord_slash import SlashCommand, SlashContext
 
 bot = Client(intents=Intents.default())
 slash = SlashCommand(bot)
-determine_flip = [1, 0]
 
 @bot.event
 async def on_ready():
