@@ -2,4 +2,4 @@
 Minimalistic Discord Bot
 
 ## License
-This Project is Licensed under Unlicense - see the LICENSE.md file for details
+This Project is Licensed under MIT License - see the LICENSE.md file for details
