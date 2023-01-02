@@ -1,12 +1,5 @@
 # Droodle Discord Bot
-
-## Requirements
-- Python 3.8 or Higher
-- discord.py 2.1.0
-- googletrans 3.0.0
-- discord-py-slash-command 4.2.1
-
-Required packages can be installed through https://pypi.org
+Minimalistic Discord Bot
 
 ## License
-This Project is Licensed under MIT License - see the LICENSE.md file for details
+This Project is Licensed under Unlicense - see the LICENSE.md file for details
