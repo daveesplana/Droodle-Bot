@@ -1,15 +1,10 @@
 import discord
 
+bot = discord.Bot()
+
 @bot.event
 async def on_ready():
-    print(f'Logging in as {bot.id}.')
-    print('Online!')
-    
-@slash.slash(
-  name="ping",
-  description="pong!"
-)
-async def ping(self, ctx):
-  await ctx.send('Pong!')
-    
+       print(f"Logged in as {bot.user} ID: {bot.user.id}")
+       print("Bot Online!")
+
 bot.run(token)
