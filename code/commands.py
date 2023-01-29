@@ -33,6 +33,6 @@ async def whoami(ctx):
     )
     embed.add_field(name="Status", value=member.status)
     embed.add_field(name="Roles", value=", ".join([role.name for role in member.roles]))
-    await ctx.send(embed=embed)
+    await ctx.respond(embed=embed)
 
 bot.run(token)
