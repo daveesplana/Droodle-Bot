@@ -22,13 +22,17 @@ async def ping(ctx):
         color=discord.Colour.blurple()
     )
     await ctx.respond(embed=embed)
-
-@bot.command(description="Displays your username.")
+    
+@bot.command(name="whoami", description="Displays your username, creation date, status, and roles.")
 async def whoami(ctx):
+    member = ctx.message.author
     embed = discord.Embed(
-        title=f"{ctx.author}",
-        description=f"Creation Date: {member.created_at}"
+        title=f"{member}",
+        description=f"Creation Date: {member.created_at}",
+        color=discord.Color.blurple()
     )
-    await ctx.respond(embed=embed)
+    embed.add_field(name="Status", value=member.status)
+    embed.add_field(name="Roles", value=", ".join([role.name for role in member.roles]))
+    await ctx.send(embed=embed)
 
 bot.run(token)
