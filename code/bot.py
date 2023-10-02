@@ -22,6 +22,9 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
     print("Bot Online")
 
+    print(f"Logged in as {bot.user} ID: {bot.user.id}")
+    print("Bot Online!")
+    
 @bot.command(description="Sends bot Latency.")
 async def ping(ctx):
     embed = discord.Embed(
