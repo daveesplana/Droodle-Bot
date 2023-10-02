@@ -41,7 +41,7 @@ async def echo(ctx, *, message):
             )
     await ctx.respond("Here's the message.", embed=embed)
 
-@bot.command(description="Allows the bot to join a channel.")
+@bot.command(description="Allows the bot to join a voice channel.")
 async def join(ctx):
     if not ctx.author.voice:
         await ctx.respond("You must be in a voice channel.")
