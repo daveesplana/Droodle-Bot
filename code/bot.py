@@ -14,6 +14,14 @@ token = str(os.getenv("TOKEN"))
 
 @bot.event
 async def on_ready():
+    await bot.change_presence(
+            activity=discord.Activity(
+                type=discord.ActivityType.listening, name="to you"
+                )
+            )
+    print(f"Logged in as {bot.user}")
+    print("Bot Online")
+
     print(f"Logged in as {bot.user} ID: {bot.user.id}")
     print("Bot Online!")
     
@@ -25,5 +33,33 @@ async def ping(ctx):
         color=discord.Colour.blurple()
     )
     await ctx.respond(embed=embed)
-    
+
+@bot.command(description="Prompts the user to display a message.")
+async def echo(ctx, *, message):
+    embed = discord.Embed(
+            description=f"{message}"
+            )
+    await ctx.respond("Here's the message.", embed=embed)
+
+@bot.command(description="Allows the bot to join a channel.")
+async def join(ctx):
+    if not ctx.author.voice:
+        await ctx.respond("You must be in a voice channel.")
+        return
+
+    channel = ctx.author.voice.channel
+    voice_channel = await channel.connect()
+    embed = discord.Embed(
+            title=f"Joined {channel.name}",
+            )
+    await ctx.respond(embed=embed)
+
+@bot.command(description="Allows the bot to leave a voice channel.")
+async def leave(ctx):
+    if ctx.voice_client:
+        await ctx.voice_client.disconnect()
+        await ctx.respond("Left the voice channel")
+    else:
+        await ctx.respond("I'm not in a voice channel.")
+
 bot.run(token)
