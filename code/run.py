@@ -19,7 +19,7 @@ async def test(ctx):
 
 @bot.commands()
 async def embed():
-       embed = discord.Embed(title="Client is ready")
+       embed = discord.Embed(title="Client is ready", color=discord.Color.green())
        await ctx.send(embed=embed)
 
 bot.run(token)
