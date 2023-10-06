@@ -50,7 +50,7 @@ async def join(ctx):
     voice_channel = await channel.connect()
     embed = discord.Embed(
             title=f"Joined {channel.name}",
-            color=discord.Color.blurple()
+            color=discord.Color.blue()
             )
     await ctx.respond(embed=embed)
 
@@ -58,10 +58,10 @@ async def join(ctx):
 async def leave(ctx):
     if ctx.voice_client:
         await ctx.voice_client.disconnect()
-        embed = discord.Embed(title="Left the voice channel.")
+        embed = discord.Embed(title="Left the voice channel.", color=discord.Color.green())
         await ctx.respond(embed=embed)
     else:
-        embed = discord.Embed(title="I'm not in a voice channel.")
+        embed = discord.Embed(title="I'm not in a voice channel.", color=discord.Color.red())
         await ctx.respond(embed=embed)
 
 bot.run(token)
