@@ -23,7 +23,6 @@ async def on_ready():
     print("Bot Online")
 
     print(f"Logged in as {bot.user} ID: {bot.user.id}")
-    print("Bot Online!")
     
 @bot.command(description="Sends bot Latency.")
 async def ping(ctx):
@@ -51,6 +50,7 @@ async def join(ctx):
     voice_channel = await channel.connect()
     embed = discord.Embed(
             title=f"Joined {channel.name}",
+            color=discord.Color.blurple()
             )
     await ctx.respond(embed=embed)
 
@@ -58,8 +58,10 @@ async def join(ctx):
 async def leave(ctx):
     if ctx.voice_client:
         await ctx.voice_client.disconnect()
-        await ctx.respond("Left the voice channel")
+        embed = discord.Embed(title="Left the voice channel.")
+        await ctx.respond(embed=embed)
     else:
-        await ctx.respond("I'm not in a voice channel.")
+        embed = discord.Embed(title="I'm not in a voice channel.")
+        await ctx.respond(embed=embed)
 
 bot.run(token)
