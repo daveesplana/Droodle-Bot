@@ -17,4 +17,9 @@ async def on_ready():
 async def test(ctx):
        await ctx.respond(f"Hello! {client.user}")
 
+@bot.commands()
+async def embed():
+       embed = discord.Embed(title="Client is ready")
+       await ctx.send(embed=embed)
+
 bot.run(token)
