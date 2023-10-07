@@ -13,9 +13,6 @@ load_dotenv()
 bot = discord.Bot()
 dotenv.load_dotenv()
 token = str(os.getenv("TOKEN"))
-initial_extensions = [
-        'cogs.radio'
-]
 
 if __name__ == '__main__':
     for extension in initial_extensions:
