@@ -13,7 +13,7 @@ dotenv.load_dotenv()
 token = str(os.getenv("TOKEN"))
 
 
-class MyBot(discord.Bot):
+class Droodle(discord.Bot):
     async def on_ready(self):
         server_count = len(bot.guilds)
         await bot.change_presence(
