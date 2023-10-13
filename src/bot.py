@@ -91,6 +91,6 @@ class Droodle(discord.Bot):
                                 )
                         await ctx.respond(embed=embed)
 
-bot = MyBot()
+bot = Droodle()
 
 bot.run(token)
