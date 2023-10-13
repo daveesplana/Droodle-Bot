@@ -2,7 +2,6 @@ import discord
 import dotenv
 import os
 import requests
-from bs4 import BeautifulSoup
 from discord.ext import commands
 from discord.ext.commands import bot
 from discord import default_permissions
