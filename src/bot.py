@@ -28,9 +28,9 @@ class Droodle(discord.Bot):
         @bot.command(description="Sends bot Latency.")
         async def ping(ctx):
             embed = discord.Embed(
-                    title="Pong!",
-                    description=f"Latency is {bot.latency}.",
-                    color=discord.Colour.blurple()
+                    title = "Pong!",
+                    description = f"Latency is {bot.latency}.",
+                    color = discord.Colour.blurple()
                     )
             await ctx.respond(embed=embed)
 
@@ -70,6 +70,7 @@ class Droodle(discord.Bot):
                 if not ctx.author.voice:
                     embed = discord.Embed(
                         title = "You must be in a voice channel.",
+                        color = discord.Colour.red()
                     )
                     await ctx.respond(embed=embed)
                     return
@@ -77,6 +78,7 @@ class Droodle(discord.Bot):
                 voice_channel = await channel.connect()
                 embed = discord.Embed(
                         title=f"Joined {channel.name}",
+                        color = discord.Colour.green()
                         )
                 await ctx.respond(embed=embed)
 
@@ -85,12 +87,14 @@ class Droodle(discord.Bot):
                     if ctx.voice_client:
                         embed = discord.Embed(
                                 title="Left the voice channel",
-                                )
+                                color = discord.Colour.green()
+                        )
                         await ctx.voice_client.disconnect()
                         await ctx.respond(embed=embed)
                     else:
                         embed = discord.Embed(
                                 title="I'm not in a voice channel",
+                                color = discord.Colour.red()
                                 )
                         await ctx.respond(embed=embed)
 
