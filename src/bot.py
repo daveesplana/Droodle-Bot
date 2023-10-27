@@ -68,12 +68,15 @@ class Droodle(discord.Bot):
             @bot.command(description="Allows the bot to join a channel.")
             async def join(ctx):
                 if not ctx.author.voice:
-                    await ctx.respond("You must be in a voice channel.")
+                    embed = discord.Embed(
+                        title = "You must be in a voice channel.",
+                    )
+                    await ctx.respond(embed=embed)
                     return
                 channel = ctx.author.voice.channel
                 voice_channel = await channel.connect()
                 embed = discord.Embed(
-                        title=f"Joined {channel.name}"
+                        title=f"Joined {channel.name}",
                         )
                 await ctx.respond(embed=embed)
 
@@ -81,13 +84,13 @@ class Droodle(discord.Bot):
                 async def leave(ctx):
                     if ctx.voice_client:
                         embed = discord.Embed(
-                                title="Left the voice channel"
+                                title="Left the voice channel",
                                 )
                         await ctx.voice_client.disconnect()
                         await ctx.respond(embed=embed)
                     else:
                         embed = discord.Embed(
-                                title="I'm not in a voice channel"
+                                title="I'm not in a voice channel",
                                 )
                         await ctx.respond(embed=embed)
 
