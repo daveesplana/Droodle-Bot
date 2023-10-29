@@ -7,6 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import bot
 from discord import default_permissions
 from dotenv import load_dotenv
+from translate import Translator
 
 load_dotenv()
 
@@ -126,5 +127,16 @@ async def remindme(ctx, time: int, *, message: str):
             color=discord.Color.purple(),
             )
     await ctx.respond(embed=embed)
+
+@bot.command(description="Translates a message to a different language.")
+async def translate(ctx, language, *, text):
+    translator = Translator(to_lang=language)
+    translation = translator.translate(text)
+    text = translation
+    embed = discord.Embed(
+            title = "Translated to:",
+            description = f"{text}",
+            )
+    await ctx.send(embed=embed)
 
 bot.run(token)
