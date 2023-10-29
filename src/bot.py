@@ -107,13 +107,21 @@ async def remindme(ctx, time: int, *, message: str):
     try:
         time = int(time)
     except ValueError:
-        await ctx.respond("The time must be an integer.")
+        embed = discord.Embed(
+                title="The time must be an integer.",
+                color = discord.Color.red()
+                )
+        await ctx.respond(embed=embed)
         return
 
     if message == "":
-        await ctx.respond("The message cannot be blank.")
+        embed = discord.Embed(
+                title = "The message cannot be blank.",
+                color = discord.Color.red()
+                )
+        await ctx.respond(embed=embed)
         return
-    
+
     user = discord.utils.get(ctx.guild.members, mention=ctx.author.mention)
     embed = discord.Embed(
             title=f"I will remind you in {time} seconds.",
