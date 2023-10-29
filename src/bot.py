@@ -142,7 +142,7 @@ async def translate(ctx, language, *, text):
     translation = translator.translate(text)
     text = translation
     embed = discord.Embed(
-            title = "Translated to:",
+            title = f"Translated to {language}:",
             description = f"{text}",
             )
     await ctx.send(embed=embed)
