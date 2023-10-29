@@ -140,11 +140,19 @@ async def remindme(ctx, time: int, *, message: str):
 async def translate(ctx, language, *, text):
     translator = Translator(to_lang=language)
     translation = translator.translate(text)
-    text = translation
-    embed = discord.Embed(
-            title = f"Translated to {language}:",
-            description = f"{text}",
-            )
-    await ctx.send(embed=embed)
+    try:
+        text = translation
+        embed = discord.Embed(
+                title = "Translated to:",
+                description = f"{text}",
+                )
+        await ctx.send(embed=embed)
+    except Exception as e:
+        embed = discord.Embed(
+                title = "Error:",
+                description = str(e),
+                color = discord.Color.red()
+                )
+        await ctx.respond(embed=embed)
 
 bot.run(token)
