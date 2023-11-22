@@ -38,7 +38,7 @@ async def ping(ctx):
     await ctx.respond(embed=embed)
 
 @bot.command(description="Prompts the user to display a message.")
-async def echo(ctx, *, message):
+async def say(ctx, *, message):
     embed = discord.Embed(
             description=f"{message}"
             )
