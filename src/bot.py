@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-bot = discord.Bot(intents=discord.Intents.all())  # Use discord.Bot for slash commands
+bot = discord.Bot(intents=discord.Intents.all()) 
 token = os.getenv("TOKEN")
 cogs_list = [
     'join',
