@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-bot = discord.Bot()
+bot = commands.Bot()
 token = str(os.getenv("TOKEN"))
 
 @bot.event
