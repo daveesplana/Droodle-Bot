@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from translate import Translator  # Ensure you have the correct import for the translation library you're using
+from deep_translator import GoogleTranslator
 
 class Translate(commands.Cog):
     def __init__(self, bot):
@@ -8,12 +8,11 @@ class Translate(commands.Cog):
 
     @discord.slash_command(description="Translates a message to a different language.")
     async def translate(self, ctx, language: str, *, text: str):
-        translator = Translator(to_lang=language)
+        translate = GoogleTranslator(source='auto', target=language).translate(text)
         try:
-            translation = translator.translate(text)
             embed = discord.Embed(
                 title="Translated to:",
-                description=translation,
+                description=translate,
                 color=discord.Color.blue()
             )
             await ctx.respond(embed=embed)
