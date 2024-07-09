@@ -1,6 +1,13 @@
 # Droodle Discord Bot
 A discord bot using the pycord library.
 
+## Setup
+- Installing packages using [requirements.txt](requirements.txt)
+  
+  ```
+  pip install -r requirements.txt
+  ```
+
 ## Contributing
 If you are interested in contributing to the project, you are welcome to submit a pull request.
 
