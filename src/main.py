@@ -12,7 +12,8 @@ cogs_list = [
     'remindme',
     'say',
     'translate',
-    'userinfo'
+    'userinfo',
+    'dictionary'
 ]
 
 @bot.event
