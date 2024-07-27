@@ -1,15 +1,19 @@
-# Droodle Discord Bot
+Droodle Discord Bot
+===============
 A discord bot using the pycord library.
 
-## Setup
-- Installing packages using [requirements.txt](requirements.txt)
+Setup
+===============
+  Installing packages using [requirements.txt](requirements.txt)
   
   ```
   pip install -r requirements.txt
   ```
 
-## Contributing
+Contributing
+===============
 If you are interested in contributing to the project, you are welcome to submit a pull request.
 
-## License
+License
+===============
 This Project is Licensed under MIT License - see the [LICENSE.md](/LICENSE.md) file for details.
